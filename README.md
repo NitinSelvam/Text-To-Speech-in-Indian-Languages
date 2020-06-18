@@ -6,4 +6,12 @@ The whole world is going digital. Money transfers from one bank account to anoth
 ### Setup instructions:
 
 1. Download repository
-2. Open terminal, move to
+2. Open terminal, move to multilang_TTS/ and run # pip install -r requirements.txt to install the the following packages:
+
+   gtts
+   playsound
+   django
+   djangorestframework
+   django-cors-headers
+   
+3. Then run
