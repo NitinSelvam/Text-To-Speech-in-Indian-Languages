@@ -20,3 +20,6 @@ The whole world is going digital. Money transfers from one bank account to anoth
    #### python manage.py runserver
    
 4. Once the server is active, run http:127.0.0.1/8000/tts to see the magic.
+
+## Demo Video
+[![SC2 Video](https://img.youtube.com/vi/5wniPnHfq-U/0.jpg)](http://www.youtube.com/watch?v=5wniPnHfq-U)
