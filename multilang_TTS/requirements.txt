@@ -1,0 +1,5 @@
+gtts
+playsound
+django
+djangorestframework
+django-cors-headers

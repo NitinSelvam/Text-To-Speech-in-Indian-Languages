@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<h1 class="notranslate">My Web Page</h1>
+
+<p>Hello everybody!</p>
+
+<p>
+You are required to read the document "Health and Safety Policy" before the deadline date
+</p>
+
+<p>I agree with the contents of this document</p>
+
+<div id="google_translate_element"></div>
+
+<input class = "notranslate" type="button" onclick="speak()" id="speak" value="Play">
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+	var obj = new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, includedLanguages: 'hi,ta,kn,gu,bn,en'}, 'google_translate_element');
+	var lang = obj.c
+	return lang;
+}
+
+function speak() {
+	var my_lan = googleTranslateElementInit()
+	console.log(my_lan)
+
+	var elems = document.getElementsByTagName("p")
+	var text_list = new Array();
+	for(i=0;i<elems.length;i++)
+	{
+		var temporalDivElement = document.createElement("div")
+		my_text = elems[i].innerHTML;
+		temporalDivElement.innerHTML = my_text;
+		final_text = temporalDivElement.textContent || temporalDivElement.innerText || "";
+		text_list.push(final_text.trim());
+	}
+
+	console.log(text_list);
+	
+	$.ajax({
+	url: 'http://127.0.0.1:8000/tts/',
+	data: {'text_list':text_list,'lang':my_lan},
+	//datatype: 'json',
+	//processData: false,
+	//type: 'POST',
+	success: function ( data ) {
+		console.log("Congrats!! Ajax call successful");
+	},
+	error: function(data) {
+		console.log("Oops! Ajax call failed");
+	}
+	});
+}
+</script>
+
+
+</body>
+</html> 
