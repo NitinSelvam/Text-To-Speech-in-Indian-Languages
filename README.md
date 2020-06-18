@@ -10,11 +10,11 @@ The whole world is going digital. Money transfers from one bank account to anoth
    #### pip install -r requirements.txt
    to install the following packages:
    
-   gtts
-   playsound
-   django
-   djangorestframework
-   django-cors-headers
+   gtts  
+   playsound  
+   django  
+   djangorestframework  
+   django-cors-headers  
    
 3. Then run this command:
    #### python manage.py runserver
